@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sudoku Solver</title>
+  <script src="solver.js"></script>
+</head>
+<body>
+  <h2>Sudoku Puzzle</h2>
+  <pre id="sudokuResult"></pre>
+  <button onclick="solveAndDisplay()">Solve</button>
+
+  <script>
+    // Original Sudoku grid
+    const originalGrid = [
+   
+      [1, 3, 2, 4, 7, 9, 6, 8, 5],
+      [5, 9, 8, 1, 6, 2, 7, 3, 4],
+      [7, 6, 4, 5, 3, 8, 2, 1, 9],
+      [8, 7, 1, 3, 4, 5, 9, 2, 6],
+      [3, 4, 9, 7, 2, 6, 8, 5, 1],
+      [2, 5, 6, 8, 9, 1, 4, 7, 3],
+      [4, 2, 7, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0]  
+    ];
+
+    // Function to solve and display the Sudoku puzzle
+    function solveAndDisplay() {
+      //new copy of the original grid to solve
+      let gridToSolve = originalGrid.map(row => [...row]);
+
+      // Solving the puzzle
+      solve(gridToSolve);
+
+      // Displaying the solved grid
+      document.getElementById('sudokuResult').textContent =
+        `Solved Sudoku:\n${gridToSolve.map(row => row.join(' ')).join('\n')}`;
+    }
+  </script>
+</body>
+</html>
+ 

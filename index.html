@@ -1,0 +1,93 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sudoku Solver - Start Page</title>
+ 
+  <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+  <header>
+    <h1> Sudoku </h1>
+  </header>
+ 
+    <div id="difficulty-selection">
+      <label><input id="level1" type="radio" name="difficulty" value="easy">Easy</label>
+      <label><input id="level2" type="radio" name="difficulty" value="medium">Medium</label>
+      <label><input id="level3" type="radio" name="difficulty" value="hard">Hard</label>
+    </div>
+
+    <div id="level-selection" style="display:none;">
+        <h3>Select Level:</h3>
+        <div id="level-options"></div>
+    </div>
+      
+    <button id="start-btn">Start Game</button>
+  
+  <script>
+   
+    let selectedLevel ; // Default level selection
+
+window.onload = function () {
+
+
+  document.getElementById("start-btn").addEventListener("click", function () {
+    const difficulty = document.querySelector('input[name="difficulty"]:checked')?.value;
+
+    if (!difficulty) {
+      alert("Please select a difficulty level.");
+      return; // Do not proceed if no difficulty is selected
+    }
+    if (difficulty === "easy"  && !selectedLevel) {
+    alert("if not chosen any level, it will start from level 1.");
+    selectedLevel = 1; // Set the default level to 1
+  }
+    window.location.href = `generator.html?difficulty=${difficulty}&level=${selectedLevel}`;// take to the selected level
+  });
+
+  //display 10 levels when selected a difficulty 
+  document.querySelectorAll('input[name="difficulty"]').forEach(input => {
+    input.addEventListener('change', function() {
+
+      const difficulty = this.value;
+      if (difficulty === "easy" || difficulty === "medium" || difficulty === "hard") {
+        displayLevelOptions(10); // 10 levels for the each difficulty
+      }
+      //don't show more levels if not selected any difficulty level
+      else {
+        document.getElementById("level-selection").style.display = "none";
+      }
+    });
+  });
+};
+
+//dynamically generate level option buttons
+function displayLevelOptions(numberOfLevels) {
+      const container = document.getElementById("level-options");
+      container.innerHTML = ""; // Clear existing buttons consisting 'level-options' name
+      //loop to generate buttons
+      for (let i = 1; i <= numberOfLevels; i++) {
+        const button = document.createElement('button');
+        button.textContent = i;
+        button.value = i;
+        button.classList.add('level-button');
+        button.onclick = function() { selectLevel(this.value); };
+        container.appendChild(button);
+      }
+      document.getElementById("level-selection").style.display = "flex";
+    }
+    
+    //store selected level and highlight the selected level by deselecting every other level
+    function selectLevel(level) {
+      selectedLevel = level;
+      document.querySelectorAll('.level-button').forEach(button => {
+        button.classList.remove('selected');
+      });
+      document.querySelector(`button[value="${level}"]`).classList.add('selected');
+    }
+
+  </script>
+</body>
+</html>

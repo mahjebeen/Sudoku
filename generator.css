@@ -1,0 +1,172 @@
+body{
+    background-color: rgba(228, 239, 250, 0.763);
+    border-bottom: 10px solid rgb(0, 20, 85);
+    border-left: 10px solid rgb(0, 20, 85);
+    border-right: 10px solid rgb(0, 20, 85);
+    border-top: 10px solid rgb(0, 20, 85);
+    height:100%;
+  } 
+  .hidden{
+    display: none;
+  }
+  body.dark {
+    background-color: rgb(0, 9, 0);
+    color: rgb(136, 164, 230);
+    border-bottom: 10px solid rgb(78, 97, 142);
+    border-left: 10px solid rgb(78, 97, 142);
+    border-right: 10px solid rgb(78, 97, 142);
+    border-top: 10px solid rgb(78, 97, 142);
+  }
+  header {
+    text-align: center;
+    padding-bottom:10px;
+    border-bottom: 5px solid rgb(78, 97, 142);
+  }
+  h1 {
+    font-size: 20pt;
+  }
+  #btn{
+    text-align: center;
+    justify-content: center;
+  }
+  button{
+    justify-self: center
+  }
+  #extras{
+    
+    justify-content: center;
+
+  }
+  #extras > *{
+    margin-bottom: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    align-items:center ;
+  }
+  p#timer, p#lives{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin-right: 10px;
+   
+  }
+
+.tile{
+  border:1px solid rgb(7, 70, 122);
+ background-color: rgb(241, 249, 254);
+  width:40px;
+  height: 40px;
+  text-align: center;
+  margin: 0px;
+  vertical-align: middle;
+  font-size: 20pt; 
+}
+
+ p.selected{
+  background-color: lightskyblue;
+}
+
+p.incorrect{
+  color: red;
+}
+
+.rightBorder{
+  border-right: 4px solid rgb(0, 20, 85);
+}
+.bottomBorder{
+  border-bottom: 4px solid rgb(0, 20, 85);
+}
+
+
+#game{
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  position:relative;
+}
+
+ #number-choose {
+  display: flex-row;
+  flex-wrap: wrap;
+  margin-left: 10px;
+
+}  
+
+ #number-choose > p {
+  border: 3px solid rgb(0, 20, 85);
+  border-radius: 10%;
+  width: 30px;
+  height: 30px;
+  font-size: 20pt;
+  margin-left: 5px;
+  margin-top:15px;
+  margin-bottom: 5px;
+ text-align: center;
+ 
+ 
+} 
+
+#board{
+  padding-top: 10px;
+  margin-top:10px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  width:400px;
+  height: 400px;
+ 
+}
+
+#win-sticker {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%) ;
+  width: 600px;
+  height: 100px;
+  background-color: rgba(7, 44, 95, 0.771);
+  border: 8px solid rgb(246, 241, 241);
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#lost-sticker {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%) ;
+  width: 600px;
+  height: 100px;
+  background-color: rgba(145, 14, 14, 0.771);
+  border: 8px solid rgb(246, 241, 241);
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#play-again-btn {
+    position: absolute;
+    font-weight: bold;
+    font-size: 50px;
+    top: 60%;
+    left: 40%;
+    font-size: 20px;
+    padding: 30px 60px;
+    margin-top: 0px;
+    cursor: pointer;
+    background-color: #1a2f52b9; /* Green */
+    color: rgb(255, 255, 255);
+    border: 5px solid rgb(16, 58, 109);
+    border-radius: 5px;
+    display: block;
+    margin: 20px auto; 
+}
+
+
